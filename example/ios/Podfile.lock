@@ -1,0 +1,97 @@
+PODS:
+  - agora_rtc_engine (6.3.0):
+    - AgoraIrisRTC_iOS (= 4.3.0-build.2)
+    - AgoraRtcEngine_iOS (= 4.3.0)
+    - Flutter
+  - AgoraIrisRTC_iOS (4.3.0-build.2)
+  - AgoraRtcEngine_iOS (4.3.0):
+    - AgoraRtcEngine_iOS/AIAEC (= 4.3.0)
+    - AgoraRtcEngine_iOS/AINS (= 4.3.0)
+    - AgoraRtcEngine_iOS/AudioBeauty (= 4.3.0)
+    - AgoraRtcEngine_iOS/ClearVision (= 4.3.0)
+    - AgoraRtcEngine_iOS/ContentInspect (= 4.3.0)
+    - AgoraRtcEngine_iOS/FaceCapture (= 4.3.0)
+    - AgoraRtcEngine_iOS/FaceDetection (= 4.3.0)
+    - AgoraRtcEngine_iOS/ReplayKit (= 4.3.0)
+    - AgoraRtcEngine_iOS/RtcBasic (= 4.3.0)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 4.3.0)
+    - AgoraRtcEngine_iOS/VideoAv1CodecDec (= 4.3.0)
+    - AgoraRtcEngine_iOS/VideoCodecDec (= 4.3.0)
+    - AgoraRtcEngine_iOS/VideoCodecEnc (= 4.3.0)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 4.3.0)
+    - AgoraRtcEngine_iOS/VQA (= 4.3.0)
+  - AgoraRtcEngine_iOS/AIAEC (4.3.0)
+  - AgoraRtcEngine_iOS/AINS (4.3.0)
+  - AgoraRtcEngine_iOS/AudioBeauty (4.3.0)
+  - AgoraRtcEngine_iOS/ClearVision (4.3.0)
+  - AgoraRtcEngine_iOS/ContentInspect (4.3.0)
+  - AgoraRtcEngine_iOS/FaceCapture (4.3.0)
+  - AgoraRtcEngine_iOS/FaceDetection (4.3.0)
+  - AgoraRtcEngine_iOS/ReplayKit (4.3.0)
+  - AgoraRtcEngine_iOS/RtcBasic (4.3.0)
+  - AgoraRtcEngine_iOS/SpatialAudio (4.3.0)
+  - AgoraRtcEngine_iOS/VideoAv1CodecDec (4.3.0)
+  - AgoraRtcEngine_iOS/VideoCodecDec (4.3.0)
+  - AgoraRtcEngine_iOS/VideoCodecEnc (4.3.0)
+  - AgoraRtcEngine_iOS/VirtualBackground (4.3.0)
+  - AgoraRtcEngine_iOS/VQA (4.3.0)
+  - em_chat_callkit (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - HyphenateChat (4.2.0)
+  - im_flutter_sdk (0.0.1):
+    - Flutter
+    - HyphenateChat (= 4.2.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - iris_method_channel (0.0.1):
+    - Flutter
+  - permission_handler_apple (9.1.1):
+    - Flutter
+
+DEPENDENCIES:
+  - agora_rtc_engine (from `.symlinks/plugins/agora_rtc_engine/ios`)
+  - em_chat_callkit (from `.symlinks/plugins/em_chat_callkit/ios`)
+  - Flutter (from `Flutter`)
+  - im_flutter_sdk (from `.symlinks/plugins/im_flutter_sdk/ios`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - iris_method_channel (from `.symlinks/plugins/iris_method_channel/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AgoraIrisRTC_iOS
+    - AgoraRtcEngine_iOS
+    - HyphenateChat
+
+EXTERNAL SOURCES:
+  agora_rtc_engine:
+    :path: ".symlinks/plugins/agora_rtc_engine/ios"
+  em_chat_callkit:
+    :path: ".symlinks/plugins/em_chat_callkit/ios"
+  Flutter:
+    :path: Flutter
+  im_flutter_sdk:
+    :path: ".symlinks/plugins/im_flutter_sdk/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  iris_method_channel:
+    :path: ".symlinks/plugins/iris_method_channel/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+
+SPEC CHECKSUMS:
+  agora_rtc_engine: f737aeb9ac7fdfcfda875d0d0125eedaa09602f9
+  AgoraIrisRTC_iOS: 2caf892fa827777fe43b6ac7d12e9b42579eb865
+  AgoraRtcEngine_iOS: 267c0980c1fb97e056d05b850f8629b05b6e467a
+  em_chat_callkit: 08f67ef7c3f470991003f71ac34bf8b5eb519260
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  HyphenateChat: e43d1ec9ccf404eeb2ee7d3265cd12a4e83f0d3a
+  im_flutter_sdk: 0012f5bb4bf59284f6b5e55059f96e60eb527328
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  iris_method_channel: 0617c689164d8154c020c50f63ca79f92b8a7b9d
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
+
+PODFILE CHECKSUM: 6e700dec67e6deac9b1c69bb14c49a2217a12d15
+
+COCOAPODS: 1.11.3
