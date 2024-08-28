@@ -33,7 +33,8 @@ class SingleCallPage extends StatefulWidget {
     Widget? backgroundWidget,
     TextStyle? nicknameTextStyle,
   }) {
-    assert(type != ChatCallKitCallType.multi, "SingleCallPage must video_1v1 or audio_1v1 type.");
+    assert(type != ChatCallKitCallType.multi,
+        "SingleCallPage must video_1v1 or audio_1v1 type.");
 
     return SingleCallPage(
       userId,
@@ -58,7 +59,8 @@ class SingleCallPage extends StatefulWidget {
     Widget? backgroundWidget,
     TextStyle? nicknameTextStyle,
   }) {
-    assert(type != ChatCallKitCallType.multi, "SingleCallPage must video_1v1 or audio_1v1 type.");
+    assert(type != ChatCallKitCallType.multi,
+        "SingleCallPage must video_1v1 or audio_1v1 type.");
 
     return SingleCallPage(
       userId,
@@ -102,7 +104,8 @@ class SingleCallPage extends StatefulWidget {
   State<SingleCallPage> createState() => _SingleCallPageState();
 }
 
-class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserver {
+class _SingleCallPageState extends State<SingleCallPage>
+    with ChatCallKitObserver {
   bool holding = true;
   bool speakerOn = false;
   bool mute = false;
@@ -188,7 +191,9 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
         rethrow;
       }
     }).catchError((e) {
-      Navigator.of(context).pop();
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
     });
   }
 
@@ -224,6 +229,11 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
     if (userId == widget.userId) {
       startTimer();
     }
+  }
+
+  @override
+  void onCallEnd(callId, reason) {
+    Navigator.of(context).pop();
   }
 
   void startTimer() {
@@ -346,7 +356,8 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
 
   Widget localWidget() {
     return cameraOn
-        ? ChatCallKitManager.getLocalVideoView() ?? Container(color: Colors.black)
+        ? ChatCallKitManager.getLocalVideoView() ??
+            Container(color: Colors.black)
         : Container(color: Colors.black);
   }
 
@@ -409,7 +420,9 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
       content = Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [content, const SizedBox(width: 17.5)]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [content, const SizedBox(width: 17.5)]),
           avatarWidget(),
           const SizedBox(height: 10),
           nicknameWidget(),
@@ -421,9 +434,13 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
       content = Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [content, const SizedBox(width: 17.5)]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [content, const SizedBox(width: 17.5)]),
           const SizedBox(height: 10),
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [floatWidget(), const SizedBox(width: 17.5)]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [floatWidget(), const SizedBox(width: 17.5)]),
         ],
       );
     }
@@ -433,7 +450,8 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
     );
 
     Widget bottom;
-    if (currentType == SingleCallType.videoCallCalling || currentType == SingleCallType.videoCallOutHolding) {
+    if (currentType == SingleCallType.videoCallCalling ||
+        currentType == SingleCallType.videoCallOutHolding) {
       bottom = bottomWidget([cameraButton(), muteButton(), hangupButton()]);
     } else {
       bottom = bottomWidget([cameraButton(), hangupButton(), answerButton()]);
@@ -525,7 +543,8 @@ class _SingleCallPageState extends State<SingleCallPage> with ChatCallKitObserve
       },
       selectImage: Image.asset("images/video_on.png"),
       unselectImage: Image.asset("images/video_off.png"),
-      backgroundColor: cameraOn ? const Color.fromRGBO(255, 255, 255, 0.2) : Colors.white,
+      backgroundColor:
+          cameraOn ? const Color.fromRGBO(255, 255, 255, 0.2) : Colors.white,
     );
   }
 

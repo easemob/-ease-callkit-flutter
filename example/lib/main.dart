@@ -117,8 +117,9 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
                   child: TextButton(
                     onPressed: _signIn,
                     style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                      foregroundColor: WidgetStateProperty.all(Colors.white),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.lightBlue),
                     ),
                     child: const Text("SIGN IN"),
                   ),
@@ -128,8 +129,9 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
                   child: TextButton(
                     onPressed: _signOut,
                     style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                      foregroundColor: WidgetStateProperty.all(Colors.white),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.lightBlue),
                     ),
                     child: const Text("SIGN OUT"),
                   ),
@@ -139,8 +141,9 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
                   child: TextButton(
                     onPressed: _signUp,
                     style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                      foregroundColor: WidgetStateProperty.all(Colors.white),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.lightBlue),
                     ),
                     child: const Text("SIGN UP"),
                   ),
@@ -162,8 +165,8 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
                 TextButton(
                   onPressed: audioCall,
                   style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
+                    backgroundColor: WidgetStateProperty.all(Colors.lightBlue),
                   ),
                   child: const Text("1v1Audio"),
                 ),
@@ -171,8 +174,8 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
                 TextButton(
                   onPressed: videoCall,
                   style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
+                    backgroundColor: WidgetStateProperty.all(Colors.lightBlue),
                   ),
                   child: const Text("1v1Video"),
                 ),
@@ -182,8 +185,8 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
             TextButton(
               onPressed: multiCall,
               style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                foregroundColor: WidgetStateProperty.all(Colors.white),
+                backgroundColor: WidgetStateProperty.all(Colors.lightBlue),
               ),
               child: const Text("Multi Call"),
             ),
@@ -266,7 +269,8 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
     pushToCallPage([userId], callType, callId);
   }
 
-  void pushToCallPage(List<String> userIds, ChatCallKitCallType callType, [String? callId]) async {
+  void pushToCallPage(List<String> userIds, ChatCallKitCallType callType,
+      [String? callId]) async {
     Widget page;
     if (callType == ChatCallKitCallType.multi) {
       if (callId == null) {
@@ -283,15 +287,17 @@ class _MyHomePageState extends State<MyHomePage> with ChatCallKitObserver {
     }
 
     [Permission.microphone, Permission.camera].request().then((value) {
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) {
-          return page;
-        }),
-      ).then((value) {
-        if (value != null) {
-          debugPrint('call end: $value');
-        }
-      });
+      if (mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) {
+            return page;
+          }),
+        ).then((value) {
+          if (value != null) {
+            debugPrint('call end: $value');
+          }
+        });
+      }
     });
   }
 

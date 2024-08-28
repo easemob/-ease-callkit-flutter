@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 
-bool enableLog = true;
+bool enableLog = false;
 
 log(String log) {
   if (enableLog) {
